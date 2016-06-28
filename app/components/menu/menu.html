@@ -1,0 +1,14 @@
+<div [hidden]="!showMenu">
+    <div class="ps-menu-area">
+        <ul class="ps-menu">
+            <li class="ps-selectable-item" *ngFor="let menuItem of menuItems">
+                <div class="ps-noselect" (click)="menuSelected(menuItem)">
+                    <i class="fa {{menuItem.icon}} ps-menu-icon"></i>
+                        {{menuItem.label}}
+                </div>
+                <i class="fa fa-2x fa-caret-left ps-menu-active-indicator" *ngIf="isActive(menuItem)"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+

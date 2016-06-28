@@ -1,0 +1,11 @@
+<ps-framework title="Whitewater"
+           subtitle="Administrative"
+           iconFile="images/kayak-icon-flat.png"
+            (menuShow)="showMenu($event);">
+</ps-framework>
+<ps-menu (menuItemSelected)="changeRoute($event);">
+    <ps-menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></ps-menu-item>
+    <ps-menu-item label="Location" icon="fa-location-arrow" route="location"></ps-menu-item>
+    <ps-menu-item label="Raft Guide" icon="fa-user" route="guides"></ps-menu-item>
+</ps-menu>
+<div>Dashboard</div>

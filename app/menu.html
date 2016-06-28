@@ -1,0 +1,10 @@
+<div class="ps-menu-area">
+    <ul class="ps-menu">
+        <li class="ps-selectable-item" *ngFor="let menuItem of menuItems">
+            <div class="ps-noselect" (click)="menuSelected(menuItem)">
+                <i class="fa {{menuItem.icon}} ps-menu-icon"></i>
+{{menuItem.label}}
+            </div>
+        </li>
+    </ul>
+</div>
