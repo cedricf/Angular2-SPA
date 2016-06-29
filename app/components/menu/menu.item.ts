@@ -4,7 +4,7 @@ import { MenuComponent } from './menu'
 @Component({
   selector: 'ps-menu-item',
   inputs: ['label', 'icon', 'route'],
-  template: ''
+  template: '...'
 })
 export class MenuItemComponent {
     public label;

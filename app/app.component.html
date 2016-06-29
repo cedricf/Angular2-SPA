@@ -1,11 +1,15 @@
 <ps-framework title="Whitewater"
            subtitle="Administrative"
-           iconFile="images/kayak-icon-flat.png"
-            (menuShow)="showMenu($event);">
+           iconFile="images/kayak-icon-flat.png">
+           
+    <ps-menu (menuItemSelected)="changeRoute($event);">
+        <ps-menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></ps-menu-item>
+        <ps-menu-item label="Location" icon="fa-location-arrow" route="location"></ps-menu-item>
+        <ps-menu-item label="Raft Guide" icon="fa-user" route="guides"></ps-menu-item>
+        <ps-menu-group label="Equipment" icon="fa-gears">
+            <ps-menu-item label="Rafts" icon="fa-unlink" route="rafts"></ps-menu-item>
+            <ps-menu-item label="Paddles" icon="fa-magic" route="paddles"></ps-menu-item>
+            <ps-menu-item label="Life Vests" icon="fa-life-ring" route="vests"></ps-menu-item>
+        </ps-menu-group>
+    </ps-menu>
 </ps-framework>
-<ps-menu (menuItemSelected)="changeRoute($event);">
-    <ps-menu-item label="Dashboard" icon="fa-dashboard" route="dashboard"></ps-menu-item>
-    <ps-menu-item label="Location" icon="fa-location-arrow" route="location"></ps-menu-item>
-    <ps-menu-item label="Raft Guide" icon="fa-user" route="guides"></ps-menu-item>
-</ps-menu>
-<div>Dashboard</div>

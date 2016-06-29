@@ -15,7 +15,6 @@ var MenuComponent = (function () {
         this.activeElement = null;
         this.showMenu = true;
         this.menuItemSelected = new core_1.EventEmitter();
-        //    console.log("test");
     }
     MenuComponent.prototype.addMenuItem = function (menuItem) {
         this.menuItems.push(menuItem);
@@ -23,7 +22,7 @@ var MenuComponent = (function () {
     MenuComponent.prototype.menuSelected = function (menuItem) {
         this.setActiveElement(menuItem);
         this.menuItemSelected.emit({
-            route: menuItem.route
+            route: menuItem.route,
         });
     };
     MenuComponent.prototype.setActiveElement = function (activeMenuItem) {
@@ -36,7 +35,6 @@ var MenuComponent = (function () {
         return this.activeElement === menuItem;
     };
     MenuComponent.prototype.setMenuVisible = function (show) {
-        console.log(show);
         this.showMenu = show;
     };
     __decorate([

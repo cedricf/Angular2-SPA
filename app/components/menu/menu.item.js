@@ -18,7 +18,7 @@ var MenuItemComponent = (function () {
         core_1.Component({
             selector: 'ps-menu-item',
             inputs: ['label', 'icon', 'route'],
-            template: ''
+            template: '...'
         }), 
         __metadata('design:paramtypes', [menu_1.MenuComponent])
     ], MenuItemComponent);

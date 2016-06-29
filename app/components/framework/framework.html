@@ -1,4 +1,4 @@
-<div class="ps-title-bar" (window:resize)="onResize($event)">
+<div class="ps-title-bar" (window:resize)="onResize($event)" (menuShow)="showMenu($event);">
     <div class="row">
         <div class="ps-logo-area col-sm-6">
             <img class="ps-icon" [src]="iconFile" />
@@ -22,3 +22,4 @@
         </div>
     </div>
 </div>
+<ng-content></ng-content>

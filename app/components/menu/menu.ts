@@ -1,5 +1,6 @@
-import {Component, Output, EventEmitter} from '@angular/core';
-import { MenuItemComponent } from './menu.item'
+import {Component, Output, EventEmitter, Inject} from '@angular/core';
+import { FrameworkComponent } from '../framework/framework';
+import { MenuItemComponent } from './menu.item';
 
 @Component({
   selector: 'ps-menu',
@@ -13,10 +14,6 @@ export class MenuComponent {
 
   @Output() menuItemSelected = new EventEmitter();
 
-  constructor(){
-//    console.log("test");
-  }
- 
   addMenuItem(menuItem: MenuItemComponent){
     this.menuItems.push(menuItem);
   }
@@ -24,7 +21,7 @@ export class MenuComponent {
   menuSelected(menuItem: MenuItemComponent){
     this.setActiveElement(menuItem);
     this.menuItemSelected.emit({
-        route: menuItem.route;
+        route: menuItem.route,
     });
   }
     
@@ -41,7 +38,6 @@ export class MenuComponent {
   }
 
   setMenuVisible(show:boolean) {
-    console.log(show);
     this.showMenu = show;
   }
 

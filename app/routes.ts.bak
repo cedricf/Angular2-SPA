@@ -1,0 +1,13 @@
+import {ROUTER_DIRECTIVES, Router, Routes} from "@angular/router";
+
+const routes: RouterConfig = [
+  { path: '/dashboard',  component: DashboardComponent },
+  { path: '/location', component: HeroDetailComponent },
+  { path: '/guides', component: HeroDetailComponent },
+];
+
+export const APP_ROUTER_PROVIDERS = [
+  provideRouter(routes),
+  CrisisDetailGuard
+];
+

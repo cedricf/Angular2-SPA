@@ -19,14 +19,6 @@ var AppComponent = (function () {
         console.log(event);
         this.frameworkComponent.menuItemSelected();
     };
-    AppComponent.prototype.showMenu = function (event) {
-        console.log("App: " + event);
-        this.menuComponent.setMenuVisible(event.show);
-    };
-    __decorate([
-        core_1.ViewChild(menu_1.MenuComponent), 
-        __metadata('design:type', menu_1.MenuComponent)
-    ], AppComponent.prototype, "menuComponent", void 0);
     __decorate([
         core_1.ViewChild(framework_1.FrameworkComponent), 
         __metadata('design:type', framework_1.FrameworkComponent)

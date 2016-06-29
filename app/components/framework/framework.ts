@@ -1,29 +1,27 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ContentChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { MenuComponent } from '../menu/menu'
+import { MenuItemComponent } from '../menu/menu.item'
 
-
-//import { Menu } from '../menu/menu';
-//import { Dashboard } from '../dashboard/dashboard';
 
 @Component({
   selector: 'ps-framework',
+  directives: [MenuComponent, MenuItemComponent],
   styleUrls: ['./app/components/framework/framework.css'],
   templateUrl: './app/components/framework/framework.html',
   inputs: ['title', 'subtitle', 'iconFile']
 })
 
 export class FrameworkComponent {
+  @ContentChild(MenuComponent) menu: MenuComponent;
+  @Output() menuShow = new EventEmitter();
+
   public title;
   public subtitle;
   public iconFile;
 
-  @Output() menuShow = new EventEmitter();
-
   isMenuButtonVisible = true;
   isMenuVisible = true;
-
-  constructor (){
-  }
 
   onResize(event) {
     this.checkWidth()
@@ -52,9 +50,20 @@ export class FrameworkComponent {
   }
 
   broadcastMenuState(){
+    this.menu.setMenuVisible(this.isMenuVisible);
+
     this.menuShow.emit({
         show: this.isMenuVisible
     });
   }
+
+  showMenu(event) {
+    this.menu.setMenuVisible(event.show);
+  }
+
+  setMenu(menu: MenuComponent){
+    this.menu = menu;
+  }
+
   
 }
